@@ -1,4 +1,4 @@
-//www.spoj.com/problems/WILLITST
+#www.spoj.com/problems/WILLITST
 n=int(input())
 bin=str(bin(n))[2:]
 ones=bin.count('1')
