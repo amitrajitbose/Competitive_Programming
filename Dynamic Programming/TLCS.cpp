@@ -1,5 +1,6 @@
 /* Codechef: https://www.codechef.com/problems/TLCS */
-//Code is logically correct, but the question asks for top down approach which I am unable to do.
+//Code is logically correct, but the test cases for the question seems to be in top down approach.
+//This code will not yield good result for the challenge problem
 //I have computed bottom to up using two dimensional array to compare to sequences
 #include<iostream>
 #include<cstring>
