@@ -10,5 +10,5 @@ I should mention that none of these solutions are written with respect to best S
 - [Codechef](https://www.codechef.com/users/amitrajit_bose)
 - [HackerEarth](https://www.hackerearth.com/@amitrajit)
 - [HackerRank](https://www.hackerrank.com/amitrajitbose9)
-- [SPOJ](https://www.spoj.com)
+- [SPOJ](https://www.spoj.com/users/jeet9/)
 - [Codeforces](http://codeforces.com/)
