@@ -1,0 +1,3 @@
+/*
+Finding maximum and minimum number of an array using divide and conquer approach
+*/
