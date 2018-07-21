@@ -1,8 +1,5 @@
 /*
 Implementation of QuickSort algorithm
-*/
-/*
-Implementation of QuickSort algorithm
 
 =======
 Implementation of QuickSort algorithm.
