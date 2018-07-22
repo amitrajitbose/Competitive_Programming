@@ -1,4 +1,5 @@
 #Problem: https://codeforces.com/contest/1009/problem/B
+#THIS FAILS TO CLEAR TC #4
 
 stack=[] #primary stack
 tempstack=[] #secondary stack
