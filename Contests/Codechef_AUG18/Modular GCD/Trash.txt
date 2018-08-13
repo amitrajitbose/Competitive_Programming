@@ -1,0 +1,47 @@
+'''
+#Stein's Algorithm
+def gcd(a, b) :
+     
+    if (a == b) :
+        return a
+ 
+    if (a == 0) :
+        return b
+ 
+    if (b == 0) :
+        return a
+ 
+    if ((~a & 1)== 1 ) :     
+         
+        # b is odd
+        if ((b & 1)== 1) :     
+            return gcd(a >> 1, b)
+        else :
+            # both a and b are even
+            return (gcd(a >> 1, b >> 1) << 1)
+     
+    # a is odd, b is even
+    if ((~b & 1)== 1) : 
+        return gcd(a, b >> 1)
+ 
+    # reduce larger number
+    if (a > b) :
+        return gcd((a - b) >> 1, b)
+ 
+    return gcd((b - a) >> 1, a)
+
+#Fast Exponentiation
+def power(x, y, p) :
+    res = 1
+    x = x % p 
+ 
+    while (y > 0) :
+        if ((y & 1) == 1) :
+            res = (res * x) % p
+ 
+        # y must be even now
+        y = y >> 1      # y = y/2
+        x = (x * x) % p
+         
+    return res
+'''
