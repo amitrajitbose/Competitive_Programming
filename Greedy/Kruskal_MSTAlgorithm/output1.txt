@@ -1,0 +1,10 @@
+Enter Total Number Of Vertices: Enter Total Number Of Edges: Enter Source Vertex<space>Destination Vertex<space>Edge Weight
+Total MST Weight:  15
+
+Resultant Minimum Spanning Tree
+Src	Destn	Weigh
+ 1	  2	  1
+ 2	  3	  2
+ 3	  4	  3
+ 3	  5	  4
+ 5	  6	  5
