@@ -1,6 +1,6 @@
 /*
- * Problem: Range minimum query in a sequence of number, also update a range of numbers
- * Approach: Segment Tree with lazy propagation
+ * Problem: Range Minimum Query on a sequence of numbers with update on a range of numbers
+ * Approach: Segmented Tree with Lazy Propagation
  */
 
 #include <bits/stdc++.h>
@@ -20,8 +20,8 @@ void updateLazy(int segmentTree[], int lazyTree[], int start, int end, int delta
 		segmentTree[pos] += lazyTree[pos]; //updating by adding the old value
 		//check if it is NOT a leaf node
 		if(low != high){
+			lazyTree[(2*pos)] += lazyTree[pos];
 			lazyTree[(2*pos)+1] += lazyTree[pos];
-			lazyTree[(2*pos)+2] += lazyTree[pos];
 			// thus the lazy value is propagated to its children now
 		}
 		lazyTree[pos] = 0;
@@ -38,8 +38,8 @@ void updateLazy(int segmentTree[], int lazyTree[], int start, int end, int delta
 	if(start<=low and end>=high){
 		segmentTree[pos] += delta; // updating
 		if(low != high){
+			lazyTree[(2*pos)] += delta;
 			lazyTree[(2*pos)+1] += delta;
-			lazyTree[(2*pos)+2] += delta;
 		}
 		return;
 	}
@@ -47,9 +47,9 @@ void updateLazy(int segmentTree[], int lazyTree[], int start, int end, int delta
 	// else PARTIAL OVERLAP
 	// thus look both left and right side
 	int mid=(low+high)/2;
-	updateLazy(segmentTree, lazyTree, start, end, delta, low, mid, (2*pos)+1);
-	updateLazy(segmentTree, lazyTree, start, end, delta, mid+1, high, (2*pos)+2);
-	segmentTree[pos] = min(segmentTree[(2*pos)+1], segmentTree[(2*pos)+2]);
+	updateLazy(segmentTree, lazyTree, start, end, delta, low, mid, (2*pos));
+	updateLazy(segmentTree, lazyTree, start, end, delta, mid+1, high, (2*pos)+1);
+	segmentTree[pos] = min(segmentTree[(2*pos)], segmentTree[(2*pos)+1]);
 }
 
 
@@ -64,8 +64,8 @@ int query(int segmentTree[], int lazyTree[], int queryLow, int queryHigh, int lo
 		segmentTree[pos] += lazyTree[pos];
 		if(low!=high){
 			// non leaf node
+			lazyTree[(2*pos)] += lazyTree[pos];
 			lazyTree[(2*pos)+1] += lazyTree[pos];
-			lazyTree[(2*pos)+2] += lazyTree[pos];
 		}
 		lazyTree[pos] = 0;
 	}
@@ -84,8 +84,8 @@ int query(int segmentTree[], int lazyTree[], int queryLow, int queryHigh, int lo
 
 	// else PARTIAL OVERLAP
 	int mid = (low+high)/2;
-	int sidea = query(segmentTree, lazyTree, queryLow, queryHigh, low, mid, (2*pos)+1);
-	int sideb = query(segmentTree, lazyTree, queryLow, queryHigh, mid+1, high, (2*pos)+2);
+	int sidea = query(segmentTree, lazyTree, queryLow, queryHigh, low, mid, (2*pos));
+	int sideb = query(segmentTree, lazyTree, queryLow, queryHigh, mid+1, high, (2*pos)+1);
 	return min(sidea, sideb);
 }
 
