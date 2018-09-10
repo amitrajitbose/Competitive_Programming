@@ -99,12 +99,15 @@ int main()
 {
     int n,q;
     cin >> n >> q;
-    int arr[100005];
+    int arr[n];
+	//int arr[100005];
     for(int i=1; i<=n; i++){
         cin >> arr[i];
     }
-    int tree[2000005]; // extra just to be safe
-    // build the tree
+	int tree[2*n +10];
+    //int tree[2000005]; // extra just to be safe
+    
+	// build the tree
     build(1, 1, n, tree, arr);
     while(q--){
         char type;
