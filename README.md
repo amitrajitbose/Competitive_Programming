@@ -6,6 +6,8 @@ This repository contains my solutions and codes to various online competitive pr
 
 It should be noted that none of these solutions are written with respect to best Software Engineering practices. The programs are written the way they're so that solutions to problems in competitions can be submitted as fast as possible. In some cases the codes have small comments for the ease of the reader.
 
+[Here](https://rawgit.com/amitrajitbose/Competitive_Programming/master/nptelAlgorithms.html) are some course notes from NPTEL Algorithms course.
+
 ## Catch Me Here
 - [LinkedIn](https://in.linkedin.com/in/amitrajitbose)
 - [HackerEarth](https://www.hackerearth.com/@amitrajit)
