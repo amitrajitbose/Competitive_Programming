@@ -99,7 +99,7 @@ int main()
 {
     int n,q;
     cin >> n >> q;
-    int arr[n];
+    int arr[n+1];
 	//int arr[100005];
     for(int i=1; i<=n; i++){
         cin >> arr[i];
