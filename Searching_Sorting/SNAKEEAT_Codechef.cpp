@@ -17,7 +17,7 @@ typedef long long ll;
 // a modified version of binary search
 ll binarySearch(ll arr[], ll l, ll r, ll k)
 {
-	if(l>r)
+	if(l>r) // if all the snakes are less than query length
 		return r+1;
 	else
 	{
@@ -47,48 +47,48 @@ int main()
 		}
 		// need to sort
 		sort(arr, arr+n);
-    //generate the prefix sum (decreasing)
-    ll j;
-    ll *prefixsum = new ll[n+1];
-    prefixsum[n]=0;
-    prefixsum[n-1]=arr[n-1];
-    for(j=n-2;j>=0;j--)
-    {
-      prefixsum[j]=prefixsum[j+1]+arr[j];
-    }
-    //now process queries
+	    //generate the prefix sum (decreasing)
+	    ll j;
+	    ll *prefixsum = new ll[n+1];
+	    prefixsum[n]=0;
+	    prefixsum[n-1]=arr[n-1];
+	    for(j=n-2;j>=0;j--)
+	    {
+	      prefixsum[j]=prefixsum[j+1]+arr[j];
+	    }
+	    //now process queries
 		rep(i,0,q)
 		{
 			cin >> k;
 			ans=0;
 			breakpoint = binarySearch(arr,0,n-1,k);
-			//cout << "DEBUG-BREAK: " << breakpoint << endl;
 			if(breakpoint == 0)
 				ans = n;
 			else if(breakpoint>0)
 			{
 				ans=n-breakpoint; // the right side elements are already greater than x
 				/*TLE*/
-        //binary search
-        low = 0;
-        high = breakpoint;
-        ll mid,len;
-        while(low<=high){
-          mid = low + (high-low)/2;
-          len = breakpoint-mid;
-          if((k*len)-(prefixsum[mid]-prefixsum[breakpoint]) < mid+1)
-            high=mid-1;
-          else
-            low=mid+1;
-        }
+	        //binary search
+	        low = 0;
+	        high = breakpoint;
+	        ll mid,len;
+	        while(low<=high)
+	        {
+	          mid = low + (high-low)/2;
+	          len = breakpoint-mid;
+	          if((k*len)-(prefixsum[mid]-prefixsum[breakpoint]) < mid+1)
+	            high=mid-1;
+	          else
+	            low=mid+1;
+	        }
 				ans += (breakpoint-low);
 			}
 			cout << ans << endl;
 		}
 		delete [] arr;
 		arr = NULL;
-    delete [] prefixsum;
-    prefixsum = NULL;
+    	delete [] prefixsum;
+    	prefixsum = NULL;
 	}
 	return 0;
 }
