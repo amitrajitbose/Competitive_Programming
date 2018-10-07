@@ -2,6 +2,7 @@
 
 #include <bits/stdc++.h>
 #define MAX 5000001
+#define MOD 1000000007
 using namespace std;
 typedef long long ll;
 
@@ -22,7 +23,6 @@ void sievePerm(){
 			}
 		}
 	}
-	ll MOD = 1000000007;
 	for(ll i=2;i<MAX;i++){
 		primes[i]=primes[i-1]+isprime[i];
 		perm[i]=(perm[i-1]*(1+primes[i]))%MOD;
