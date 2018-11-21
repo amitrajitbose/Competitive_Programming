@@ -17,9 +17,11 @@ void tsp(int current, int n, int visited[], int tourcost, int source)
 	int i,currcost,j;
 	for(i=0;i<n;i++)
 	{
-		if(!visited[i] && g[current][i] && (g[current][i]+g[i][current]<min))
+		//if(!visited[i] && g[current][i] && (g[current][i]+g[i][current]<min))
+		if(!visited[i] && g[current][i] && (g[current][i]<min))
 		{
-			min=g[current][i]+g[i][current];
+			//min=g[current][i]+g[i][current];
+			min=g[current][i];
 			currcost=g[current][i]; //travel cost
 			j=i; //node index with min cost path
 		}
