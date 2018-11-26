@@ -18,11 +18,11 @@ def decodings(msg):
 	dp[0]=1
 	dp[1]=1 #whatever number it is will always be one
 	for i in range(1,n):
-		if(msg[i]>=0):
-			#if current digits is >= 0, then curr-1 counts will get added
+		if(msg[i]>0):
+			#if current digits is > 0, then curr-1 counts will get added
 			dp[i+1]=dp[i]
 		lasttwo=(msg[i-1]*10)+msg[i]
-		if(lasttwo<27):
+		if(lasttwo<27  and lasttwo>9):
 			dp[i+1] += dp[i-1]
 	return dp[n]
 
@@ -30,3 +30,5 @@ assert decodings(111)==3
 assert decodings(121)==3
 assert decodings(1234)==3
 assert decodings(918)==2
+assert decodings(12011201)==2
+assert decodings(13911201)==4
