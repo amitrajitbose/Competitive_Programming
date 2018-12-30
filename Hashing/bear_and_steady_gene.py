@@ -2,8 +2,6 @@
 Link: https://www.hackerrank.com/challenges/bear-and-steady-gene/problem
 '''
 
-#!/bin/python3
-
 import math
 import os
 import random
@@ -53,10 +51,11 @@ def steadyGene(gene):
 
 
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    #fptr = open(os.environ['OUTPUT_PATH'], 'w')
     n = int(input())
     gene = input()
     result = steadyGene(gene)
-    fptr.write(str(result) + '\n')
-    fptr.close()
+    print(result)
+	#fptr.write(str(result) + '\n')
+    #fptr.close()
 
