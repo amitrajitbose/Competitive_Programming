@@ -1,0 +1,45 @@
+Maximize : ((((N mod i)mod j)mod k)mod N)
+
+A mod B is MAX when B = (A//2)+1
+
+-----------------------------------------
+
+For achieving maximum M we get:
+
+i = (N//2) + 1
+j = (N%i)//2 + 1
+k = ((N%i)%j)//2 + 1
+
+For example: 
+N = 100
+i = 51
+j = 25
+k = 13
+
+M = 11 
+
+----------------------------------------
+So, given an N and a P value
+We can find i = N//2 +1
+Let N%i be x
+j = x+1 ... P
+  For each j, let y be x%j
+   k = y+1 ... P
+
+
+
+n=3, p=4
+i=2, x=1
+j=2,3,4 ,y=1
+k=2,3
+
+INPUT = 3,4
+
+OUTPUTS =
+(4)
+
+if n==p:
+case1 =
+
+if n<p:
+case1 + 2*(p-n)*
