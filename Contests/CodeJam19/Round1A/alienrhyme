@@ -1,0 +1,23 @@
+
+import sys
+input=sys.stdin.readline
+
+for cnum in range(int(input())):
+    n=int(input())
+    words=[{} for _ in range(55)]
+    for _ in range(n):
+        w=input().strip()
+        words[len(w)][w]=1
+        #print(len(w),w)
+    ans=0
+    for i in range(1,55)[::-1]:
+        for j,k in words[i].items():
+            if k>=2:
+                ans+=2
+                k-=2
+            j2=j[1:]
+            k2=k+words[i-1].get(j2,0)
+            if k2==0: continue
+            words[i-1][j2]=k2
+            #print(j2,k2)
+    print("Case #%d: %d"%(cnum+1,ans))

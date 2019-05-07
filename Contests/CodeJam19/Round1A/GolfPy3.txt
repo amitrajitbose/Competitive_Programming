@@ -1,0 +1,86 @@
+if 1:
+    from sys import *
+    from functools import *
+    from collections import *
+    from itertools import *
+    from heapq import *
+
+    def args_str(*args, **kwargs):
+        return ','.join(value for value in [','.join(map(repr, args)),','.join("{}={}".format(k, repr(v)) for k, v in kwargs.items())] if value)
+
+    def print_result(before=False, after=True):
+        def fc(func):
+            @wraps(func)
+            def f(*args, **kwargs):
+                if before:
+                    print("{}({})"     .format(func.__name__, args_str(*args, **kwargs)))
+                r = func(*args, **kwargs)
+                if after:
+                    print("{}({}) = {}".format(func.__name__, args_str(*args, **kwargs), r))
+                return r
+            return f
+        return fc
+
+    def memoize(function):
+        memo = {}
+        @wraps(function)
+        def f(*args):
+            if args not in memo:
+                memo[args] = function(*args)
+                if not (len(memo) & 32767):
+                    print("memo", function.__name__, len(memo), file=stderr)
+            return memo[args]
+        f.memo = memo
+        return f
+
+    def line():
+        return input().strip()
+
+    def parts(f=int):
+        return list(map(f, line().split()))
+
+    def qparts(f=int):
+        data = line().split()
+        return data[0], list(map(f, data[1:]))
+
+    def apply_after(after):
+        def _apply_after(function):
+            @wraps(function)
+            def f(*args, **kwargs):
+                return after(function(*args, **kwargs))
+            return f
+        return _apply_after
+
+    listify = apply_after(list)
+
+t, n, m = parts()
+mods = [2**4, 3**2, 5, 7, 11, 13, 17]
+
+def egcd(a, b):
+    if b == 0:
+        return a, 1, 0
+    else:
+        g, x, y = egcd(b, a % b)
+        return g, y, x - (a // b) * y
+
+@memoize
+def inv(a, n):
+    g, x, y = egcd(a, n)
+    assert g == 1
+    return x % n
+
+for cas in range(1,1+t):
+    ans = 0
+    mod = 1
+    for m in mods:
+        print(*[m]*18, flush=True)
+        a = sum(map(int, input().split()))
+        if a == -1: exit(1)
+        mmod = m * mod
+        ans, mod = (
+            m * inv(m, mod) * ans + mod * inv(mod, m) * a
+            ) % mmod, mmod
+        assert ans % m == a % m
+
+    print(ans, flush=True)
+    if input() == '-1': exit(2)

@@ -1,0 +1,28 @@
+import sys
+input=sys.stdin.readline
+
+t,n,m=map(int,input().split())
+
+for _ in range(t):
+    things=[16,9,5,7,11,13,17]
+    res=[]
+    
+    for i in things:
+        print(" ".join(map(lambda x:str(i),range(18))))
+        sys.stdout.flush()
+        s=list(map(int,input().split()))
+        if s[0]==-1: sys.exit(0)
+        res.append(sum(s)%i)
+    
+    ans=0
+    bad=1
+    while bad:
+        bad=0
+        for i in range(7):
+            while ans%things[i]!=res[i]:
+                ans+=1
+                bad=1
+    print(ans)
+    sys.stdout.flush()
+    s=list(map(int,input().split()))
+    if s[0]==-1: sys.exit(0)
