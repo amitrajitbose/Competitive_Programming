@@ -3,12 +3,15 @@
 # Hence Two numbers from the range are missing from this array. Find the two missing numbers.
 
 def findtwomissing(arr, n):
+    # Space = O(1)
+    # Time = O(n)
+    #
     assert len(arr)==n-2
     
     currxor = 0
     
     for i in range(1,n+1):
-        arr.append(i)
+        currxor ^= i
     
     for i in arr:
         currxor ^= i
@@ -17,7 +20,14 @@ def findtwomissing(arr, n):
 
     x = 0
     y = 0
+    
     for i in arr:
+        if i & rem:
+            x ^= i
+        else:
+            y ^= i
+
+    for i in range(1,n+1):
         if i & rem:
             x ^= i
         else:
