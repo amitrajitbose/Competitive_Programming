@@ -32,9 +32,10 @@ def findtwomissing(arr, n):
             x ^= i
         else:
             y ^= i
-    return [x,y]
+    return [min(x,y), max(x,y)]
 
 assert(findtwomissing([1,3,5,6],6)==[2,4])
 assert(findtwomissing([1,2,4],5)==[3,5])
 assert(findtwomissing([1,2],4)==[3,4])
 assert(findtwomissing([1,6,4,2],6)==[3,5])
+assert(findtwomissing([1,5,3,4],6)==[2,6])
