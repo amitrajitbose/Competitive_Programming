@@ -1,17 +1,16 @@
 # Competitive Programming
 
-Competitive Programming is a sport. It is a way to keep the brain healthy and fit. It is the gym for the mind.
+Competitive Programming is a sport. It is a way to keep the brain healthy and fit. It is the gym for the mind. And, last but not the least, we are practicing it excel at our coding interviews.
 
-This repository contains my solutions and codes to various online competitive programming challenges. The links to the problem statements are specified at the beginning of each code. Apart from that, I've also put here some of the very common and important problems and algorithms that are commonly asked in interviews.
+This repository contains solutions and codes to various online competitive programming challenges from various popular platforms. The links to the problem statements are specified at the beginning of each code, or along with the commit message. Apart from that, I've also put here some of the very common and important problems and algorithms that are commonly asked in interviews.
 
-It should be noted that none of these solutions are written with respect to best Software Engineering practices. The programs are written the way they're so that solutions to problems in competitions can be submitted as fast as possible. In some cases the codes have small comments for the ease of the reader.
+It should be noted that mostly none of these solutions are written with respect to best Software Engineering practices. The programs are written the way they're, so that solutions to problems in competitions can be submitted as fast as possible. In some cases the codes have short comments for the ease of the reader, and not for official documentation purpose.
 
-[Here](https://rawgit.com/amitrajitbose/Competitive_Programming/master/nptelAlgorithms.html) are some course notes from NPTEL Algorithms course. It is not up-to-date though. 
+[Here](https://rawgit.com/amitrajitbose/Competitive_Programming/master/nptelAlgorithms.html) are some course notes from NPTEL Algorithms course.
 
-#### Contacts
-- [LinkedIn](https://in.linkedin.com/in/amitrajitbose)
-- [HackerEarth](https://www.hackerearth.com/@amitrajit)
-- [Codechef](https://www.codechef.com/users/amitrajit_bose)
-- [HackerRank](https://www.hackerrank.com/amitrajitbose9)
-- [SPOJ](https://www.spoj.com/users/jeet9/)
-- [Codeforces](http://codeforces.com/)
+## Contributions
+I am so happy that you want to contribute. There are no specific rules, if you've found a problem that is good enough for interview and you want to showcase your solution - Just go ahead, add it and submit a PR. I'll make sure it gets accepted at the earliest. Cheers!
+
+<p align="center">
+<img src="https://media0.giphy.com/media/DGWAx8d3IkICs/giphy.gif?cid=790b76115cf6d589576968446f90b1a1&rid=giphy.gif" alt="drawing" width="500"/>
+</p>
