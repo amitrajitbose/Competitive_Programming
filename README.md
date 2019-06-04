@@ -14,3 +14,27 @@ I am so happy that you want to contribute. There are no specific rules, if you'v
 <p align="center">
 <img src="https://media0.giphy.com/media/DGWAx8d3IkICs/giphy.gif?cid=790b76115cf6d589576968446f90b1a1&rid=giphy.gif" alt="drawing" width="500"/>
 </p>
+
+## Structure
+
+```
+.
+├── AdHoc
+├── Backtracking
+├── Contests
+├── CS591
+├── Divide_Conquer
+├── Dynamic Programming
+├── Graphs
+├── Greedy
+├── Hashing
+├── LinkedList
+├── Misc
+├── Number_Theory
+├── Policy Based Data Structures C++ [PBDS.cpp]
+├── Searching_Sorting
+├── Stack_Queue
+├── Subarrays
+└── Tree
+```
+
