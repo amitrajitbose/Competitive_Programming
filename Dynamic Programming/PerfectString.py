@@ -1,7 +1,7 @@
 """
 Alice and Bob are best friends. Today is Alice's birthday and Bob wants to gift her a perfect string. A perfect string is a string in 
 which the absolute difference between adjacent characters is equal to 2, 3, or 4. For example, if the position of the characters 'd and
-'yr' is 4 and 7 respectively, then the absolute difference between their positions is 3. Bob has a normal string S which he has to 
+'g' is 4 and 7 respectively, then the absolute difference between their positions is 3. Bob has a normal string S which he has to 
 convert to a perfect string so that he can gift it to Alice. Since her birthday is today, he wants to convert it into a perfect string
 by using the minimum amount of time. The time to change one character to another takes the same amount of time that is equal to the 
 absolute difference between the characters. 
@@ -17,11 +17,11 @@ Explanation
 The string with minimum cost is "acaceg". The cost to convert "abcdef" to "acaceg" is 5. 
 """
 
-
+from pprint import pprint
 class Solution:
     def __init__(self):
         super().__init__()
-    def solve(self, s: str) -> int:
+    def solve(self, s: str, debug: bool) -> int:
         m = len(s)
         dp = []
         for i in range(26):
@@ -38,6 +38,8 @@ class Solution:
                     if nextletter >= 0 and nextletter < 26:
                         cost = abs(ord(s[j]) - (ord('a')+nextletter))
                         dp[nextletter][j] = min(dp[nextletter][j], cost+dp[i][j-1])
+        if debug:
+            pprint(dp)
         minm = float('inf')
         for i in range(26):
             minm = min(minm, dp[i][-1])
@@ -45,3 +47,4 @@ class Solution:
 
 obj = Solution()
 print(obj.solve('abcdef', debug=False))
+print(obj.solve('ay', debug=True))
