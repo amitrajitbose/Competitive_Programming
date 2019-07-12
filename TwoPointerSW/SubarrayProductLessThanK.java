@@ -5,6 +5,8 @@ class Solution {
         int count = 0;
         int left = 0;
         int curr_prod = 1;
+        if (k<=1)
+                return 0;
         for (int i=0; i<nums.length; i++)
         {
             //System.out.println(curr_prod+","+count);
