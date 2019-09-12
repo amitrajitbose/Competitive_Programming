@@ -1,0 +1,15 @@
+Class Design Python
+
+Introduction
+------------
+
+The goal of this exercise is to evaluate your capacity of designing your code based on a simple logic. The
+most important is to do each step in order and be sure to finish one before going for the next one. It’s
+better to do less but correctly than everything but wrong. Pay attention to details, especially in what the
+
+expected output is. A mistake of a space, typo, or any other output mistake can conduct to a fail of our
+test cases. Pay also attention to examples, they can give you information.
+Today, we’re going to create an artificial nightmare of offices, corridors, forms, and waiting in line.
+Sounds fun? No? Too bad.
+
+
