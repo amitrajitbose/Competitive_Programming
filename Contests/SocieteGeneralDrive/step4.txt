@@ -1,9 +1,0 @@
-Step 4
-File: previous files, intern.py
-
-You’re going to create the Intern class. The intern has no name, no grade, no defining characteristics whatsoever, we only care that he does the job. The intern has one important thing, the make_form
-function. The function takes two strings, the first representing the name of a form, and the second one being the target for the form. It will return the instance of the concrete form class that is represented by the first parameter, initialized with the second parameter. The function will print something like “Intern creates [Form name]” to the standard output. If the requested form is unknown, print an explicit error message and return None. Your code will be test as follow:
-
-robotomy_form = Intern.make_form('RobotomyRequestForm', 'Bender')
-
-
