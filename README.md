@@ -31,10 +31,10 @@ I am so happy that you want to contribute. There are no specific rules, if you'v
 ├── LinkedList
 ├── Misc
 ├── Number_Theory
-├── Policy Based Data Structures C++ [PBDS.cpp]
 ├── Searching_Sorting
 ├── Stack_Queue
 ├── Subarrays
-└── Tree
+├── Tree
+└── TwoPointerSW
 ```
 
