@@ -20,4 +20,5 @@ def square_sum(n):
 assert(square_sum(13)== 2)
 assert(square_sum(4) == 1)
 assert(square_sum(6) == 3)
+assert(square_sum(41)== 2)
 
