@@ -1,0 +1,27 @@
+# 1171
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def removeZeroSumSublists(self, head: ListNode) -> ListNode:
+        dummy = curr = ListNode(0)
+        dummy.next = head
+        ps = 0
+        psmap = {}
+        while curr:
+            ps += curr.val
+            if not ps in psmap:
+                psmap[ps] = curr
+            else:
+                curr = psmap[ps].next
+                tSum = ps + curr.val
+                while tSum != ps and tSum in psmap:
+                    del psmap[tSum]
+                    curr = curr.next
+                    tSum += curr.val
+                psmap[ps].next = curr.next
+            curr = curr.next
+        return dummy.next
+
