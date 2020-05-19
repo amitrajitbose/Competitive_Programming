@@ -1,6 +1,7 @@
 # PRIORITY QUEUE BASED IMPLEMENTATION OF DIJKSTRA ALGO
 # TIME : O(E log V)
 # Problem Link : https://www.interviewbit.com/problems/dijsktra/
+# REF : https://bradfieldcs.com/algos/graphs/dijkstras-algorithm/
 
 import heapq
 def calculate_distances(graph, starting_vertex):
