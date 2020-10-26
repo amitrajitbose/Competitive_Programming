@@ -1,0 +1,20 @@
+class Solution:
+    # @param A : string
+    # @return an integer
+    def romanToInt(self, A):
+        if A=="":
+            return 0
+        dict = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+        sum = 0
+        firstChar = dict[A[-1]]
+        sum += firstChar
+        for i, char in enumerate(A[::-1]):
+            if i == 0:
+                continue
+            if dict[char] < dict[A[-i]]:
+                sum -= dict[char]
+            else:
+                sum += dict[char]
+        return sum
+
+print(Solution().romanToInt("MDCCLXXIII"))
