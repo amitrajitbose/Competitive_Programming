@@ -4,17 +4,17 @@ class Solution:
     def romanToInt(self, A):
         if A=="":
             return 0
-        dict = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
-        sum = 0
-        firstChar = dict[A[-1]]
-        sum += firstChar
+        dictionary = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+        totalSum = 0
+        firstChar = dictonary[A[-1]]
+        totalSum += firstChar
         for i, char in enumerate(A[::-1]):
             if i == 0:
                 continue
-            if dict[char] < dict[A[-i]]:
-                sum -= dict[char]
+            if dictonary[char] < dictonary[A[-i]]:
+                totalSum -= dictonary[char]
             else:
-                sum += dict[char]
-        return sum
+                totalSum += dictonary[char]
+        return totalSum
 
 print(Solution().romanToInt("MDCCLXXIII"))
