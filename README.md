@@ -16,7 +16,7 @@ It should be noted that mostly none of these solutions are written with respect 
 - [Sameer Gulati's Quora Answer](https://www.quora.com/What-is-a-list-of-data-structures-that-a-competitive-programmer-must-know/answer/Sameer-Gulati-3)
 
 ## Contributions
-I am so happy that you want to contribute. There are no specific rules, if you've found a problem that is good enough for interview and you want to showcase your solution - Just go ahead, add it and submit a PR. I'll make sure it gets accepted at the earliest. Cheers!
+I am so happy that you want to contribute. There are no specific rules, if you've found a problem that is good enough for interview and you want to showcase your solution - Just go ahead, add it and submit a PR. **Please [read this document](https://github.com/amitrajitbose/Competitive_Programming/blob/master/CONTRIBUTING.md) before submitting the PR.** I'll make sure it gets accepted at the earliest. Cheers!
 
 <p align="center">
 <img src="https://media0.giphy.com/media/DGWAx8d3IkICs/giphy.gif?cid=790b76115cf6d589576968446f90b1a1&rid=giphy.gif" alt="drawing" width="300"/>
