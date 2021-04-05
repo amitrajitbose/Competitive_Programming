@@ -6,6 +6,5 @@ Please follow these very simple guidelines
 - Write modular, readable and well-formatted code.
 - Please add problem link on top of your source code, as a comment.
 - Please add code which passes all test cases. We love to see the green AC symbol only ✅
-- Please add your name in the README->Contributors section, i.e [here](https://github.com/amitrajitbose/Competitive_Programming#contributors), with the Github avatar link also.
 
 I'll make sure it gets merged at the earliest. Cheers and thanks!
