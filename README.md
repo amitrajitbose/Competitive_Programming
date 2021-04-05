@@ -22,13 +22,6 @@ I am so happy that you want to contribute. There are no specific rules, if you'v
 <img src="https://media0.giphy.com/media/DGWAx8d3IkICs/giphy.gif?cid=790b76115cf6d589576968446f90b1a1&rid=giphy.gif" alt="drawing" width="300"/>
 </p>
 
-### Contributors
-
-<span>
-<a href="https://github.com/PK-100"><img src="https://avatars.githubusercontent.com/u/68665655?v=4" width="60"><a/>
-<a href="https://github.com/sank8dalvi"><img src="https://avatars.githubusercontent.com/u/36796116?v=4" width="60"><a/>
-</span>
-
 ## Structure
 
 ```
@@ -36,7 +29,6 @@ I am so happy that you want to contribute. There are no specific rules, if you'v
 ├── AdHoc
 ├── Backtracking
 ├── Contests
-├── CS591
 ├── Divide_Conquer
 ├── Dynamic Programming
 ├── Graphs
@@ -47,7 +39,7 @@ I am so happy that you want to contribute. There are no specific rules, if you'v
 ├── Number_Theory
 ├── Searching_Sorting
 ├── Stack_Queue
-├── Subarrays
+├── SegmentTrees
 ├── Tree
 └── TwoPointerSW
 ```
