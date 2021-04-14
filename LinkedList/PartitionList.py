@@ -6,51 +6,42 @@
 #         self.val = x
 #         self.next = None
 
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 class Solution:
     def partition(self, head: ListNode, x: int) -> ListNode:
-        less = more = None
-        lesshead = morehead = None
         if not head:
             return head
-        if head.val < x :
-            less = lesshead = head
-            head = head.next
-            while(head):
-                if head.val < x :
-                    less.next = head
-                    less = less.next
-                else:
-                    more = morehead = head
-                    head = head.next
-                    break
-                head = head.next
-                
-        else:
-            more = morehead = head
-            head = head.next
-            while(head):
-                if head.val >= x :
-                    more.next = head
-                    more = more.next
-                else:
-                    less = lesshead = head
-                    head = head.next
-                    break
-                head = head.next
+        less, more, lp, mp = None, None, None, None
+        p = head
 
-        while(head):
-                if head.val >= x:
-                    more.next = head
-                    more = more.next
+        while p:
+            if p.val < x:
+                if lp:
+                    lp.next = p
+                    lp = lp.next
                 else:
-                    less.next = head
-                    less = less.next
-                head = head.next
+                    less = p
+                    lp = less
+            else:
+                if mp:
+                    mp.next = p
+                    mp = mp.next
+                else:
+                    more = p
+                    mp = more
+            p = p.next
+        # join lists
+        if lp and mp:
+            lp.next = more
+            mp.next = None
+            return less
+        elif not mp:
+            return less
+        elif not lp:
+            return more
         
-        if more:
-            more.next = None
-        if less:
-            less.next = morehead
-            return lesshead
-        else:
-            return morehead
+        
