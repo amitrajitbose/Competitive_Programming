@@ -1,0 +1,87 @@
+# LC 146
+class Node:
+#DLL Node
+    def __init__(self, val):
+        self.val = val
+        self.prev = None
+        self.next = None
+
+class LRUCache:
+
+    def __init__(self, capacity: int):
+        self.key_node = {}
+        self.key_val = {}
+        self.size = 0
+        self.capacity = capacity
+        self.head = Node('head')
+        self.tail = Node('tail')
+        self.head.next = self.tail
+        self.tail.prev = self.head
+
+    def _printOrder(self):
+        itr = self.head
+        res = []
+        while itr != self.tail:
+            res.append(itr.val)
+            itr = itr.next
+        print(res)
+
+
+    def _addToHead(self, node):
+        # add a recently access node at head
+        node.prev = self.head
+        node.next = self.head.next
+        self.head.next.prev = node
+        self.head.next = node
+    
+    def _removeFromTail(self):
+        # remove the last node from tail
+        if self.tail.prev == self.head:
+            return "Nothing to remove"
+        lastNode = self.tail.prev
+        lastNode.prev.next = self.tail
+        self.tail.prev = lastNode.prev
+        # print("Purging {}".format(lastNode.val))
+        del lastNode
+    
+    def _removeNode(self, node):
+        node.prev.next = node.next
+        node.next.prev = node.prev
+        return node
+
+
+    def get(self, key: int) -> int:
+        if key not in self.key_val:
+            return -1
+        res = self.key_val[key]
+        node = self._removeNode(self.key_node[key])
+        self._addToHead(node)
+        # self._printOrder()
+        return res
+
+    def put(self, key: int, value: int) -> None:
+        if key in self.key_val:
+            #update value
+            self.key_val[key] = value
+            node = self._removeNode(self.key_node[key])
+            self._addToHead(node)
+        else:
+            #add entry
+            self.key_val[key] = value
+            self.size += 1
+            newNode = Node(key)
+            self.key_node[key] = newNode
+            self._addToHead(newNode)
+            if (self.size > self.capacity):
+                lastNode = self.tail.prev
+                del self.key_val[lastNode.val]
+                del self.key_node[lastNode.val]
+                self._removeFromTail()
+        # self._printOrder()
+
+
+
+# Your LRUCache object will be instantiated and called as such:
+# obj = LRUCache(capacity)
+# param_1 = obj.get(key)
+# obj.put(key,value)
